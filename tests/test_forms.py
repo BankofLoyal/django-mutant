@@ -4,7 +4,7 @@ from django import forms
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ValidationError
 from django.test.testcases import TestCase
-from django.utils.translation import ugettext
+from django.utils.translation import gettext
 
 from mutant.forms import FieldDefinitionTypeField
 from mutant.models.field import FieldDefinition
@@ -95,7 +95,7 @@ class FieldDefinitionTypeFieldTests(TestCase):
                 ('', 'Empty'),
             ] + sorted([
                 (self.field_definition_ct.pk, 'None'),
-                (self.custom_field_ct.pk, ugettext('Custom description'))
+                (self.custom_field_ct.pk, gettext('Custom description'))
             ])
         )
 
@@ -109,8 +109,8 @@ class FieldDefinitionTypeFieldTests(TestCase):
         self.assertEqual(
             list(field.choices), [
                 (self.field_definition_ct.pk, 'None'),
-                (ugettext('Custom category'), (
-                    (self.custom_field_ct.pk, ugettext('Custom description')),
+                (gettext('Custom category'), (
+                    (self.custom_field_ct.pk, gettext('Custom description')),
                 ))
             ]
         )

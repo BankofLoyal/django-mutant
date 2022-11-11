@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ValidationError
 from django.db.models import deletion, fields
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from picklefield.fields import PickledObjectField
 
 from ...compat import get_remote_field
@@ -206,7 +206,7 @@ db_table_help_text = _('The name of the table to create for storing the '
 
 
 class ManyToManyFieldDefinition(RelatedFieldDefinition):
-    symmetrical = fields.NullBooleanField(_('symmetrical'))
+    symmetrical = fields.BooleanField(null=True)
     through = fields.related.ForeignKey(
         ContentType, on_delete=deletion.CASCADE, blank=True, null=True, related_name='+', help_text=through_help_text
     )

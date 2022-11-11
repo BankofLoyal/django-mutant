@@ -9,7 +9,7 @@ from operator import itemgetter
 from django.apps import AppConfig, apps
 from django.db import connections, models, router
 import six
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.utils.functional import lazy
 
 from .compat import get_remote_field, get_remote_field_model
@@ -49,9 +49,9 @@ def popattr(obj, attr, default=NOT_PROVIDED):
 
 def _string_format(string, *args, **kwargs):
     if args:
-        return string % tuple(force_text(s) for s in args)
+        return string % tuple(force_str(s) for s in args)
     elif kwargs:
-        return string % dict((k, force_text(v)) for k, v in kwargs.items())
+        return string % dict((k, force_str(v)) for k, v in kwargs.items())
 lazy_string_format = lazy(_string_format, six.text_type)
 
 

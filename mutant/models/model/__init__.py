@@ -10,7 +10,7 @@ from django.core.exceptions import ValidationError, FieldDoesNotExist
 from django.db import models
 from django.db.migrations.state import ModelState
 from django.db.models.constants import LOOKUP_SEP
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from picklefield.fields import PickledObjectField
 
 from ... import logger

@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 import os
 import sys
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mutant.contrib.file import models
 from mutant.test import testcases

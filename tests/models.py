@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 import django
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mutant.db.fields import FieldDefinitionTypeField
 from mutant.db.fields.related import ModelClassAttributeDescriptor
@@ -46,7 +46,7 @@ class Mixin(object):
 
 
 class ConcreteModel(models.Model):
-    concrete_model_field = models.NullBooleanField()
+    concrete_model_field = models.BooleanField(null=True)
 
     class Meta:
         app_label = 'tests'
@@ -77,7 +77,7 @@ class AbstractConcreteModelSubclass(ConcreteModel):
 
 class ModelSubclassWithTextField(models.Model):
     abstract_model_field = models.TextField()
-    second_field = models.NullBooleanField()
+    second_field = models.BooleanField(null=True)
 
     class Meta:
         abstract = True

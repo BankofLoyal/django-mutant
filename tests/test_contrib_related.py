@@ -6,7 +6,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ValidationError, FieldDoesNotExist
 from django.core.management import call_command
 from django.db.models.deletion import ProtectedError
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mutant.compat import get_remote_field_model
 from mutant.contrib.related.models import (

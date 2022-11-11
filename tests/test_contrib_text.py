@@ -5,7 +5,7 @@ from unittest import skipUnless
 
 from django.db import connection, transaction
 from django.db.utils import DatabaseError
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mutant.contrib.text.models import CharFieldDefinition, TextFieldDefinition
 from mutant.test.testcases import FieldDefinitionTestMixin
