@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from django import forms
 from django.contrib.contenttypes.models import ContentType
-from django.utils.encoding import smart_text
+from django.utils.encoding import smart_str
 from django.utils.functional import LazyObject
 
 from .utils import choices_from_dict
@@ -40,7 +40,7 @@ class LazyFieldDefinitionGroupedChoices(LazyObject):
             definition = content_type.model_class()
             category = definition.get_field_category()
             definition_choices.append({
-                'group': smart_text(category) if category else None,
+                'group': smart_str(category) if category else None,
                 'value': content_type.pk,
                 'label': label_from_instance(content_type),
             })
@@ -92,4 +92,4 @@ class FieldDefinitionTypeField(forms.ModelChoiceField):
     choices = property(_get_choices, forms.ModelChoiceField._set_queryset)
 
     def label_from_instance(self, obj):
-        return smart_text(obj.model_class().get_field_description())
+        return smart_str(obj.model_class().get_field_description())

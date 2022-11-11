@@ -7,7 +7,7 @@ from django.contrib.gis.geos import (
 from django.db import connection
 from django.test.utils import skipUnless
 from django.utils.module_loading import import_string
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mutant.models import BaseDefinition
 from mutant.test.testcases import FieldDefinitionTestMixin

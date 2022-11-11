@@ -5,7 +5,7 @@ from unittest import TestCase
 from django.apps.registry import Apps
 from django.core.exceptions import ImproperlyConfigured
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from mutant.db.fields.related import ModelClassAttributeDescriptor
 from mutant.db.fields.translation import LazilyTranslatedField

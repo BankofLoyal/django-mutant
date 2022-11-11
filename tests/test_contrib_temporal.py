@@ -4,8 +4,8 @@ import datetime
 import warnings
 
 from django.test.utils import override_settings
-from django.utils.timezone import make_aware, utc
-from django.utils.translation import ugettext_lazy as _
+from django.utils.timezone import make_aware
+from django.utils.translation import gettext_lazy as _
 
 from mutant.contrib.temporal.models import (
     DateFieldDefinition, DateTimeFieldDefinition, TimeFieldDefinition,
@@ -47,11 +47,11 @@ class AwareDateTimeFieldDefinitionTest(TemporalFieldDefinitionTestMixin,
                                        BaseModelDefinitionTestCase):
     field_definition_cls = DateTimeFieldDefinition
     field_definition_init_kwargs = {
-        'default': make_aware(datetime.datetime(1990, 8, 31, 23, 46), utc)
+        'default': make_aware(datetime.datetime(1990, 8, 31, 23, 46), datetime.timezone.utc)
     }
     field_values = (
-        make_aware(datetime.datetime(2020, 11, 15, 15, 34), utc),
-        make_aware(datetime.datetime(1988, 5, 15, 15, 30), utc)
+        make_aware(datetime.datetime(2020, 11, 15, 15, 34), datetime.timezone.utc),
+        make_aware(datetime.datetime(1988, 5, 15, 15, 30), datetime.timezone.utc)
     )
 
     def test_create_with_naive_default(self):

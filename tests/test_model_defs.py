@@ -9,7 +9,7 @@ from django.core.management import call_command
 from django.db import connection, connections, models, router, transaction
 from django.db.utils import IntegrityError
 from django.test.utils import CaptureQueriesContext
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 
 from mutant.compat import many_to_many_set
 from mutant.contrib.related.models import ForeignKeyDefinition
@@ -105,9 +105,7 @@ class ModelDefinitionTest(BaseModelDefinitionTestCase):
 
     def test_fixture_loading(self):
         """Make model and field definitions can be loaded from fixtures."""
-        call_command(
-            'loaddata', 'fixture_loading_test', verbosity=0, commit=False
-        )
+        call_command('loaddata', 'fixture_loading_test', verbosity=0)
         self.assertTrue(
             ModelDefinition.objects.filter(
                 app_label='tests', object_name='MyFixtureModel'

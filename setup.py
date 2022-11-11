@@ -6,6 +6,8 @@ from mutant import __version__
 
 MODULE_PATH = os.path.abspath(os.path.dirname(__file__))
 
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mutant.settings")
+
 setup(
     name='django-mutant',
     version=__version__,
@@ -15,9 +17,10 @@ setup(
     author='Simon Charette',
     author_email='charette.s@gmail.com',
     install_requires=[
-        'django>=1.8',
+        'django>=3.0,<4.2',
         'django-picklefield>=0.3.2',
         'django-polymodels>=1.4.6a3',
+        'six'
     ],
     packages=find_packages(exclude=['tests', 'tests.*']),
     package_data={
@@ -28,20 +31,18 @@ setup(
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 1.8',
-        'Framework :: Django :: 1.9',
-        'Framework :: Django :: 1.10',
-        'Framework :: Django :: 1.11',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
         'Topic :: Software Development :: Libraries :: Python Modules'
     ]
 )
