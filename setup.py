@@ -1,10 +1,10 @@
 from setuptools import find_packages, setup
 
-from mutant import __version__
+VERSION = '1.0.1'
 
 setup(
     name='django-mutant',
-    version=__version__,
+    version=VERSION,
     description='Dynamic model definition and alteration (evolving schemas)',
     long_description=open('README.rst').read(),
     url='https://github.com/charettes/django-mutant',
