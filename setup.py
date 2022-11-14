@@ -1,18 +1,12 @@
-#!/usr/bin/env python
-import os
 from setuptools import find_packages, setup
 
 from mutant import __version__
-
-MODULE_PATH = os.path.abspath(os.path.dirname(__file__))
-
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mutant.settings")
 
 setup(
     name='django-mutant',
     version=__version__,
     description='Dynamic model definition and alteration (evolving schemas)',
-    long_description=open(os.path.join(MODULE_PATH, 'README.rst')).read(),
+    long_description=open('README.rst').read(),
     url='https://github.com/charettes/django-mutant',
     author='Simon Charette',
     author_email='charette.s@gmail.com',
