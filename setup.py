@@ -11,7 +11,7 @@ setup(
     author='Simon Charette',
     author_email='charette.s@gmail.com',
     install_requires=[
-        'django>=3.0,<4.2',
+        'django>=3.0,<5.0',
         'django-picklefield>=0.3.2',
         'django-polymodels>=1.4.6a3',
         'six'
