@@ -114,7 +114,7 @@ def unreference_model(model):
             remote_field_model = get_remote_field_model(field)
             if isinstance(remote_field_model, models.base.ModelBase):
                 clear_opts_related_cache(remote_field_model)
-                rel_is_hidden = remote_field.is_hidden()
+                rel_is_hidden = remote_field.hidden
                 # An accessor is added to related classes if they are not
                 # hidden. However o2o fields *always* add an accessor
                 # even if the relationship is hidden.
